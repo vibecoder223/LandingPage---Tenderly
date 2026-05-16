@@ -1041,6 +1041,117 @@ h3 { font-size: 18px; letter-spacing: -0.012em; font-weight: 600; margin: 0; col
 }
 .foot__base .mono { font-size: 11.5px; }
 
+/* --------------------------- Mobile responsive --------------------------- */
+
+@media (max-width: 760px) {
+  .container { padding: 0 20px; }
+
+  /* Nav */
+  .nav__inner { gap: 12px; height: 60px; }
+  .nav__cta .link-quiet { display: none; }
+
+  /* Hero */
+  .hero { padding: 36px 0 56px; }
+  .h1 { font-size: clamp(30px, 7vw, 36px); line-height: 1.1; }
+  .hero__copy { gap: 18px; max-width: 100%; }
+  .lede { font-size: 15.5px; line-height: 1.55; }
+  .hero__cta { flex-direction: column; align-items: stretch; gap: 10px; width: 100%; }
+  .hero__cta .btn { width: 100%; height: 46px; }
+  .hero__cta .btn-ghost { justify-content: center; padding: 12px; border: 1px solid var(--border); border-radius: var(--r-sm); }
+  .hero__proof { gap: 10px 14px; font-size: 13px; }
+  .hero__proof .dot { display: none; }
+
+  /* Hero matrix mock */
+  .app { border-radius: 12px; }
+  .app__chrome { padding: 10px 12px; gap: 10px; flex-wrap: wrap; }
+  .app__dots { order: 1; }
+  .app__avs { order: 3; margin-left: auto; }
+  .app__tabs { order: 2; width: 100%; gap: 2px; overflow-x: auto; }
+  .app__tab { padding: 5px 10px; font-size: 12px; white-space: nowrap; }
+  .app__body { padding: 16px 14px 4px; }
+  .app__crumb { font-size: 11.5px; }
+  .app__title { font-size: 16px; }
+  .app__sub { font-size: 11.5px; }
+  .app__head { gap: 10px; margin-bottom: 10px; }
+  .app__filters { gap: 4px; flex-wrap: wrap; }
+  .filter { padding: 4px 9px; font-size: 11px; }
+  .matrix__head, .matrix__row { padding: 10px 6px; gap: 10px; }
+  .matrix__head, .matrix__row { grid-template-columns: 42px minmax(0, 1fr) 98px; }
+  .m-id { font-size: 11px; }
+  .m-req p { font-size: 12.5px; line-height: 1.35; }
+  .m-req .src { font-size: 10.5px; padding: 2px 7px; }
+  .st { padding: 3px 7px; font-size: 10.5px; }
+
+  /* Logos strip */
+  .logos { padding-bottom: 36px; }
+  .logos__row { gap: 18px 28px; font-size: 14px; }
+
+  /* Section heads */
+  .section-head { margin-bottom: 36px; gap: 14px; }
+  .section-head--center { margin-bottom: 40px; }
+  .h2 { font-size: clamp(24px, 6.4vw, 32px); line-height: 1.15; }
+  .section-lede { font-size: 15px; }
+
+  /* Sections */
+  .problem, .how, .features, .proof, .faq { padding: 64px 0; }
+  .final { padding: 72px 0 80px; }
+
+  /* Problem timeline cards */
+  .tl-day { padding: 18px 18px 0; min-height: 0 !important; }
+  .tl-h { font-size: 17px; }
+  .tl-p { font-size: 13.5px; margin-bottom: 14px; }
+  .tl-art { margin-left: -18px; margin-right: -18px; padding-left: 18px; padding-right: 18px; }
+
+  /* Solution steps */
+  .step { padding: 22px 20px 20px; min-height: 0; }
+  .step__h { font-size: 17px; }
+
+  /* Bento features */
+  .bento__card { padding: 22px 20px 20px; }
+  .bento__card:nth-of-type(1) { min-height: 0; }
+  .bento__card p { font-size: 14px; }
+
+  /* Stats */
+  .stat { padding-top: 14px; }
+  .stat__big { font-size: clamp(40px, 11vw, 56px); }
+  .stat__lbl { font-size: 15px; }
+  .stat__note { font-size: 13px; }
+
+  /* Quote */
+  .proof__inner { gap: 40px; }
+  .quote blockquote p { font-size: clamp(18px, 4.6vw, 22px); line-height: 1.4; }
+
+  /* FAQ */
+  .faq details { padding: 18px 0; }
+  .faq summary { font-size: 16px; padding-right: 28px; gap: 16px; }
+  .faq summary::after { width: 11px; height: 11px; }
+  .faq details p { font-size: 14.5px; }
+
+  /* Final CTA */
+  .final__h { font-size: clamp(28px, 7vw, 38px); }
+  .final__p { font-size: 15.5px; }
+  .final__cta { flex-direction: column; align-items: stretch; gap: 10px; width: 100%; max-width: 320px; }
+  .final__cta .btn { width: 100%; height: 46px; }
+  .final__cta .btn-ghost { justify-content: center; padding: 12px; border: 1px solid var(--border); border-radius: var(--r-sm); }
+
+  /* Footer */
+  .foot { padding: 48px 0 24px; }
+  .foot__inner { gap: 32px; padding-bottom: 36px; }
+  .foot__cols { gap: 28px 24px; grid-template-columns: 1fr 1fr; }
+  .foot__base { flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 18px; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 0 16px; }
+  .h1 { font-size: 28px; }
+  .nav__cta .btn--sm { padding: 7px 10px; font-size: 12.5px; }
+  .matrix__head, .matrix__row { grid-template-columns: 38px minmax(0, 1fr) 92px; gap: 8px; padding: 10px 4px; }
+  .filter { font-size: 10.5px; padding: 4px 8px; }
+}
+
+/* Prevent horizontal scroll anywhere */
+html, body { overflow-x: hidden; }
+
 /* --------------------------- Motion --------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
