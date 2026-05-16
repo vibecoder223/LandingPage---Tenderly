@@ -1,0 +1,1747 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#f7f6f3" />
+
+  <title>Tenderly — AI-Powered RFP, RFI &amp; RFQ Response Automation for Enterprise Bid Teams</title>
+  <meta name="description" content="Tenderly is the AI proposal automation platform for enterprise bid teams. Read any RFP, draft compliant answers from your knowledge base, route questions to legal and security, and export submission-ready proposals in hours, not weeks." />
+  <link rel="canonical" href="https://tenderly.ai/" />
+
+  <meta name="keywords" content="rfp response automation, rfp software, ai proposal management, rfp automation, bid management software, rfi response automation, rfq automation, proposal automation, ai for bid teams, tender response software" />
+  <meta name="author" content="Tenderly" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Tenderly" />
+  <meta property="og:title" content="Tenderly — Win more tenders without the chaos." />
+  <meta property="og:description" content="AI-powered RFP, RFI, and RFQ response automation for enterprise bid teams. From a 247-page PDF to a submission-ready proposal, in hours." />
+  <meta property="og:url" content="https://tenderly.ai/" />
+  <meta property="og:image" content="https://tenderly.ai/og.png" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@tenderly_ai" />
+  <meta name="twitter:title" content="Tenderly — Win more tenders without the chaos." />
+  <meta name="twitter:description" content="AI-powered RFP, RFI, and RFQ response automation for enterprise bid teams." />
+  <meta name="twitter:image" content="https://tenderly.ai/og.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+/* =========================================================================
+   Tenderly — landing page
+   Harmonized with the product UI: indigo brand, cool paper neutrals, Inter
+   ========================================================================= */
+
+:root {
+  /* Surface */
+  --bg:            #F7F8FA;
+  --bg-2:          #F1F3F6;
+  --surface:       #FFFFFF;
+  --surface-2:     #FAFBFC;
+  --border:        #E4E7EC;
+  --border-strong: #D0D5DD;
+  --divider:       #EEF0F3;
+
+  /* Ink */
+  --fg:    #0F1626;
+  --fg-2:  #2A3245;
+  --fg-3:  #5B6478;
+  --fg-4:  #8A93A6;
+  --fg-5:  #B8BFCE;
+
+  /* Brand */
+  --accent:       #3B47D6;
+  --accent-2:     #2E3AB8;
+  --accent-3:     #1F2A8C;
+  --accent-tint:  #EEF0FF;
+  --accent-tint2: #E0E4FF;
+  --accent-line:  #C7CDF7;
+
+  /* Status */
+  --ok:        #0E8A5F;
+  --ok-tint:   #E6F4EE;
+  --ok-line:   #B7DECC;
+  --warn:      #B7791F;
+  --warn-tint: #FBF3E0;
+  --warn-line: #ECDAA7;
+  --err:       #C0392B;
+  --err-tint:  #FBEAE7;
+  --info:      #3B47D6;
+  --info-tint: #EEF0FF;
+
+  /* Type */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Radii */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r:    8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+  --r-pill: 999px;
+
+  /* Elevation */
+  --sh-1: 0 1px 2px rgba(15,22,38,0.04), 0 0 0 1px rgba(15,22,38,0.02);
+  --sh-2: 0 4px 14px rgba(15,22,38,0.06), 0 1px 2px rgba(15,22,38,0.04);
+  --sh-3: 0 16px 40px rgba(15,22,38,0.10), 0 2px 6px rgba(15,22,38,0.05);
+  --sh-mock: 0 1px 0 rgba(15,22,38,0.04),
+             0 30px 60px -28px rgba(15,22,38,0.22),
+             0 12px 28px -16px rgba(15,22,38,0.10);
+}
+
+/* --------------------------- Base --------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg-2);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'cv02','cv03','cv11','ss01';
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+
+::selection { background: var(--accent-tint); color: var(--accent-2); }
+
+.skip {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--fg); color: white;
+  padding: 10px 14px; border-radius: var(--r-sm); z-index: 100;
+}
+.skip:focus { left: 16px; top: 16px; }
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+@media (min-width: 900px) { .container { padding: 0 40px; } }
+
+.mono { font-family: var(--font-mono); letter-spacing: 0; }
+.dim  { color: var(--fg-4); }
+.sep  { color: var(--fg-5); display: inline-block; margin: 0 4px; }
+
+/* --------------------------- Typography --------------------------- */
+
+.h1 {
+  font-size: clamp(32px, 3.4vw, 50px);
+  line-height: 1.08;
+  letter-spacing: -0.028em;
+  font-weight: 650;
+  margin: 0;
+  color: var(--fg);
+  text-wrap: balance;
+}
+.h1__line { color: var(--fg-3); font-weight: 500; }
+
+.h2 {
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 650;
+  margin: 0;
+  color: var(--fg);
+}
+
+h3 { font-size: 18px; letter-spacing: -0.012em; font-weight: 600; margin: 0; color: var(--fg); }
+
+.lede {
+  font-size: clamp(16.5px, 1.4vw, 18.5px);
+  line-height: 1.55;
+  color: var(--fg-3);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 6px 11px 6px 9px;
+  background: var(--accent-tint);
+  border: 1px solid var(--accent-line);
+  border-radius: var(--r-pill);
+}
+.eyebrow__dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 3px rgba(59,71,214,0.16);
+}
+.eyebrow--warn { color: var(--warn); background: var(--warn-tint); border-color: var(--warn-line); }
+.eyebrow--warn .eyebrow__dot--warn { background: var(--warn); box-shadow: 0 0 0 3px rgba(183,121,31,0.18); }
+.eyebrow--ok   { color: var(--ok);   background: var(--ok-tint);   border-color: var(--ok-line); }
+.eyebrow--ok   .eyebrow__dot--ok   { background: var(--ok);   box-shadow: 0 0 0 3px rgba(14,138,95,0.18); }
+
+.section-head { display: flex; flex-direction: column; gap: 18px; max-width: 62ch; margin: 0 0 60px; }
+.section-head--center { margin: 0 auto 64px; align-items: center; text-align: center; }
+.section-lede { margin: 0; font-size: 17px; color: var(--fg-3); line-height: 1.55; }
+
+/* --------------------------- Buttons --------------------------- */
+
+.btn {
+  --pad-y: 10px; --pad-x: 16px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: var(--pad-y) var(--pad-x);
+  background: var(--accent);
+  color: white;
+  border: 1px solid var(--accent);
+  border-radius: var(--r-sm);
+  font: 550 14px / 1 var(--font-sans);
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  transition: background .15s ease, transform .15s cubic-bezier(.2,.7,.1,1), box-shadow .15s ease;
+  white-space: nowrap;
+  box-shadow: 0 1px 0 rgba(15,22,38,0.06), 0 1px 3px rgba(59,71,214,0.20);
+}
+.btn:hover { background: var(--accent-2); border-color: var(--accent-2); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(59,71,214,0.25); }
+.btn:active { transform: translateY(0); }
+.btn--lg { --pad-y: 13px; --pad-x: 22px; font-size: 15px; }
+.btn--sm { --pad-y: 7px;  --pad-x: 12px; font-size: 13px; }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 9px 10px;
+  color: var(--fg-2);
+  font: 550 14px / 1 var(--font-sans);
+  border-radius: var(--r-sm);
+  transition: color .15s ease, gap .15s ease, background .15s ease;
+}
+.btn-ghost:hover { color: var(--accent); background: var(--accent-tint); gap: 10px; }
+.btn-ghost svg { transition: transform .25s cubic-bezier(.2,.7,.1,1); color: currentColor; }
+.btn-ghost:hover svg { transform: translateX(2px); }
+
+.link {
+  display: inline-flex; align-items: center; gap: 4px;
+  font: 550 14.5px / 1 var(--font-sans);
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-line);
+  padding-bottom: 2px;
+}
+.link:hover { border-bottom-color: var(--accent); }
+
+.link-quiet {
+  font: 500 14px / 1 var(--font-sans);
+  color: var(--fg-3);
+  transition: color .15s ease;
+}
+.link-quiet:hover { color: var(--fg); }
+
+/* --------------------------- Nav --------------------------- */
+
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(247, 248, 250, 0.82);
+  backdrop-filter: saturate(160%) blur(12px);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid var(--divider);
+}
+.nav__inner {
+  display: flex; align-items: center; gap: 32px;
+  height: 64px;
+}
+.brand { display: inline-flex; align-items: center; gap: 9px; color: var(--fg); font-weight: 650; letter-spacing: -0.02em; }
+.brand__word { font-size: 16px; }
+.brand__mark { color: var(--accent); }
+.nav__links { display: none; flex: 1; gap: 26px; align-items: center; }
+.nav__links a { font: 500 14px/1 var(--font-sans); color: var(--fg-3); transition: color .15s ease; }
+.nav__links a:hover { color: var(--fg); }
+.nav__cta { display: flex; align-items: center; gap: 14px; margin-left: auto; }
+@media (min-width: 880px) { .nav__links { display: flex; } }
+
+/* --------------------------- Hero --------------------------- */
+
+.hero { padding: clamp(44px, 5vw, 72px) 0 clamp(56px, 6vw, 88px); position: relative; }
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(32px, 4vw, 48px);
+  align-items: center;
+}
+@media (min-width: 1080px) {
+  .hero__inner { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); }
+}
+.hero__copy { display: flex; flex-direction: column; gap: 22px; max-width: 42ch; }
+.hero__cta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+.hero__proof {
+  list-style: none; padding: 0; margin: 4px 0 0;
+  display: flex; flex-wrap: wrap; gap: 16px;
+  font-size: 14px; color: var(--fg-3);
+  align-items: center;
+}
+.hero__proof strong { color: var(--fg); font-weight: 650; margin-right: 4px; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.hero__proof .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--fg-5); list-style: none; }
+
+/* HERO mock: app window with compliance matrix */
+.hero__visual { margin: 0; }
+.app {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--sh-mock);
+  overflow: hidden;
+}
+
+/* CHROME / TABS */
+.app__chrome {
+  display: flex; align-items: center; gap: 16px;
+  padding: 12px 18px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--divider);
+}
+.app__dots { display: flex; gap: 6px; flex-shrink: 0; }
+.app__dots span {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--fg-5);
+  opacity: 0.55;
+}
+.app__dots span:nth-child(1) { background: #ED6A5E; opacity: 0.85; }
+.app__dots span:nth-child(2) { background: #F4BF4F; opacity: 0.85; }
+.app__dots span:nth-child(3) { background: #61C554; opacity: 0.85; }
+
+.app__tabs { display: flex; align-items: center; gap: 4px; flex: 1; }
+.app__tab {
+  padding: 7px 14px;
+  background: transparent;
+  border: none;
+  color: var(--fg-3);
+  font: 550 13px/1 var(--font-sans);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: color .15s ease, background .15s ease;
+  letter-spacing: -0.005em;
+}
+.app__tab:hover { color: var(--fg); }
+.app__tab.is-active {
+  background: var(--surface);
+  color: var(--fg);
+  font-weight: 600;
+  box-shadow: var(--sh-1);
+  border: 1px solid var(--border);
+}
+
+.app__avs { display: inline-flex; flex-shrink: 0; }
+.app__avs .av { box-shadow: 0 0 0 2px var(--bg); }
+.app__avs .av + .av { margin-left: -8px; }
+
+/* Avatars */
+.av {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--fg-3);
+  color: white;
+  font: 600 10.5px/1 var(--font-mono);
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
+.av--sk { background: #D87C2E; }   /* warm orange */
+.av--jm { background: #0E8A5F; }   /* green */
+.av--rt { background: #3B47D6; }   /* indigo */
+.av--dh { background: #2E7C8F; }   /* teal */
+.av--sec { background: #C0392B; }
+.av--leg { background: #8B5CF6; }
+.av--fin { background: #0E8A5F; }
+.av--prd { background: #2E7C8F; }
+
+/* APP BODY */
+.app__body { padding: 18px 20px 6px; }
+
+.app__crumb {
+  font-size: 12px;
+  color: var(--fg-4);
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+.app__crumb .sep { color: var(--fg-5); }
+
+.app__head {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.app__title {
+  font-size: 18px;
+  font-weight: 650;
+  color: var(--fg);
+  letter-spacing: -0.02em;
+  margin: 0 0 3px;
+  line-height: 1.2;
+}
+.app__sub { font-size: 12px; color: var(--fg-3); margin: 0; font-variant-numeric: tabular-nums; }
+
+.app__filters {
+  display: inline-flex; gap: 5px;
+  flex-shrink: 0;
+}
+.filter {
+  padding: 5px 10px;
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--fg-3);
+  font: 550 11.5px/1 var(--font-sans);
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+  letter-spacing: -0.005em;
+  font-variant-numeric: tabular-nums;
+}
+.filter:hover { background: var(--bg-2); color: var(--fg-2); }
+.filter.is-active {
+  background: var(--accent-tint);
+  color: var(--accent-2);
+  border-color: var(--accent-line);
+  font-weight: 600;
+}
+
+/* MATRIX (grid-based, guarantees continuous row dividers) */
+.matrix { display: flex; flex-direction: column; margin: 0 -10px; }
+.matrix__head,
+.matrix__row {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 108px 108px 132px;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 10px;
+  border-bottom: 1px solid var(--divider);
+}
+.matrix__head {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+}
+.matrix__row {
+  font-size: 13px;
+  color: var(--fg-2);
+  border-radius: 6px;
+  transition: background .15s ease;
+}
+.matrix__row:last-child { border-bottom: 0; }
+.matrix__row:hover { background: var(--accent-tint); }
+.matrix__row:hover .src { background: var(--surface); border-color: var(--accent-line); }
+
+.m-id {
+  font: 600 11.5px/1 var(--font-mono);
+  color: var(--fg-3);
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+.m-req p {
+  margin: 0 0 5px;
+  color: var(--fg);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  line-height: 1.35;
+  font-size: 13px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.m-req .src {
+  display: inline-block;
+  padding: 3px 8px;
+  background: var(--bg-2);
+  border: 1px solid var(--divider);
+  border-radius: var(--r-sm);
+  color: var(--fg-4);
+  font-size: 11px;
+  font-weight: 400;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.m-owner {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--fg-2);
+  font-size: 12.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.m-owner .av { width: 20px; height: 20px; font-size: 9px; flex-shrink: 0; }
+
+.st {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 9px;
+  border-radius: var(--r-pill);
+  font: 550 11.5px/1 var(--font-sans);
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+}
+.st i { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+.st--ok    { color: var(--ok);    background: var(--ok-tint); }
+.st--rev   { color: var(--warn);  background: var(--warn-tint); }
+.st--draft { color: var(--accent); background: var(--accent-tint); }
+.st--err   { color: var(--err);   background: var(--err-tint); }
+
+.m-conf {
+  display: flex; align-items: center; gap: 8px;
+}
+.m-conf .bar { flex: 1; min-width: 0; height: 5px; background: var(--bg-2); border-radius: var(--r-pill); overflow: hidden; }
+.m-conf .bar__fill { display: block; height: 100%; background: var(--ok); border-radius: inherit; }
+.m-conf .bar__fill--ok  { background: var(--ok); }
+.m-conf .bar__fill--rev { background: var(--warn); }
+.m-conf .m-num {
+  font: 600 11.5px/1 var(--font-mono);
+  color: var(--fg-2);
+  width: 20px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+.m-conf .m-kebab {
+  color: var(--fg-5);
+  width: 8px;
+  text-align: center;
+  font-weight: 700;
+  user-select: none;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.matrix__row.m-fade { opacity: 0.5; }
+
+/* Narrower viewports: drop the confidence column, then owner */
+@media (max-width: 1240px) {
+  .matrix__head, .matrix__row { grid-template-columns: 48px minmax(0, 1fr) 108px 108px; }
+  .col-conf { display: none; }
+}
+@media (max-width: 880px) {
+  .app__body { padding: 16px 14px 4px; }
+  .matrix__head, .matrix__row { grid-template-columns: 44px minmax(0, 1fr) 104px; gap: 10px; }
+  .col-owner { display: none; }
+}
+
+/* --------------------------- Logos strip --------------------------- */
+
+.logos { padding: 0 0 56px; }
+.logos__label {
+  font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--fg-4); margin: 0 0 24px;
+  text-align: center;
+  font-weight: 600;
+}
+.logos__row {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-wrap: wrap; gap: clamp(28px, 5vw, 56px);
+  justify-content: center; align-items: center;
+  color: var(--fg-4);
+  font: 600 16px/1 var(--font-sans);
+  letter-spacing: -0.015em;
+}
+
+/* --------------------------- Problem timeline --------------------------- */
+
+.problem { padding: clamp(80px, 11vw, 132px) 0; background: linear-gradient(180deg, transparent, rgba(251,243,224,0.55) 40%, transparent); }
+
+.timeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 720px)  { .timeline { grid-template-columns: 1fr 1fr; gap: 22px; } }
+@media (min-width: 1080px) { .timeline { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+
+.tl-day {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 22px 22px 0;
+  display: flex; flex-direction: column;
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .25s cubic-bezier(.2,.7,.1,1), border-color .2s ease, box-shadow .2s ease;
+  box-shadow: var(--sh-1);
+}
+.tl-day:hover { border-color: var(--border-strong); box-shadow: var(--sh-2); transform: translateY(-2px); }
+.tl-day--1 { min-height: 340px; }
+.tl-day--3 { min-height: 300px; }
+.tl-day--5 { min-height: 340px; }
+.tl-day--7 { min-height: 310px; }
+.tl-day--9 { min-height: 340px; }
+.tl-day--11 {
+  min-height: 320px;
+  background: linear-gradient(180deg, #FBF3E0 0%, var(--surface) 60%);
+  border-color: var(--warn-line);
+}
+
+.tl-head { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; }
+.tl-num {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+  white-space: nowrap;
+  font-weight: 600;
+}
+.tl-rule { flex: 1; height: 1px; background: var(--border); }
+
+.tl-h { font-size: 19px; letter-spacing: -0.018em; margin: 0 0 8px; color: var(--fg); font-weight: 650; }
+.tl-p { margin: 0 0 18px; color: var(--fg-3); font-size: 14px; line-height: 1.55; }
+
+.tl-art {
+  margin: auto -22px 0;
+  padding: 18px 22px 22px;
+  border-top: 1px dashed var(--divider);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-3);
+  position: relative;
+}
+
+/* Art: PDF stack */
+.tl-art--pdf { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.page {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  height: 80px;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 9.5px;
+  color: var(--fg-4);
+  position: relative;
+}
+.page::after {
+  content: "";
+  position: absolute; left: 8px; right: 8px; top: 24px;
+  border-top: 1px solid var(--divider);
+  box-shadow:
+    0 8px 0 -1px var(--divider),
+    0 16px 0 -1px var(--divider),
+    0 24px 0 -1px var(--divider);
+}
+.page--2, .page--3 { background: var(--surface-2); }
+.page--3 { transform: translateY(2px); }
+
+/* Art: folders */
+.tl-art--folders { display: flex; flex-direction: column; gap: 5px; }
+.folder {
+  padding: 7px 10px 7px 28px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 11.5px;
+  color: var(--fg-3);
+  position: relative;
+  font-family: var(--font-mono);
+}
+.folder::before {
+  content: ""; position: absolute; left: 9px; top: 50%; transform: translateY(-50%);
+  width: 12px; height: 9px;
+  background: #DEB066;
+  border-radius: 1.5px 2px 1px 1px;
+}
+.folder::after {
+  content: ""; position: absolute; left: 9px; top: calc(50% - 5px);
+  width: 5px; height: 2.5px;
+  background: #DEB066;
+  border-radius: 1px 1px 0 0;
+}
+
+/* Art: slack */
+.tl-art--slack { display: flex; flex-direction: column; gap: 8px; padding-top: 14px; padding-bottom: 22px; }
+.msg {
+  padding: 8px 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--fg-3);
+  position: relative;
+}
+.msg .av { display: inline-flex; margin-right: 6px; vertical-align: -4px; width: 16px; height: 16px; font-size: 8.5px; }
+.msg__name { font-weight: 650; color: var(--fg); font-size: 11px; }
+.msg__time { color: var(--fg-5); margin-left: 6px; font-size: 10.5px; font-family: var(--font-mono); }
+.msg__txt { color: var(--fg-3); font-family: var(--font-sans); }
+.msg--self { background: var(--accent-tint); border-color: var(--accent-line); }
+.msg--self .msg__name { color: var(--accent-2); }
+
+/* Art: ticket */
+.tl-art--ticket { padding-top: 18px; padding-bottom: 22px; }
+.ticket {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex; flex-direction: column; gap: 9px;
+}
+.ticket__line { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 12px; }
+.ticket__line .chip { font-family: var(--font-mono); font-size: 11px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  font: 550 11.5px/1 var(--font-sans);
+  padding: 3px 9px;
+  border-radius: var(--r-pill);
+}
+.chip--ok   { background: var(--ok-tint);   color: var(--ok); }
+.chip--warn { background: var(--warn-tint); color: var(--warn); }
+
+/* Art: paste */
+.tl-art--paste { display: flex; flex-direction: column; gap: 6px; position: relative; padding-top: 14px; padding-bottom: 22px; }
+.paste {
+  padding: 7px 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 11.5px;
+  color: var(--fg-3);
+  font-family: var(--font-mono);
+}
+.paste--dim { color: var(--fg-4); opacity: 0.75; }
+.note {
+  position: absolute; right: 8px; top: 2px;
+  background: #FCE38A;
+  color: #6E5018;
+  padding: 4px 9px;
+  font-size: 11px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: 3px;
+  transform: rotate(3deg);
+  box-shadow: 0 6px 14px rgba(110, 80, 24, 0.18);
+}
+
+/* Art: email */
+.tl-art--email { padding-top: 16px; padding-bottom: 22px; }
+.email {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex; flex-direction: column; gap: 5px;
+  font-family: var(--font-sans);
+}
+.email__from { font-size: 11px; font-family: var(--font-mono); color: var(--fg-4); }
+.email__sub { font-weight: 650; font-size: 13px; color: var(--fg); }
+.email__body { font-size: 12px; color: var(--fg-3); line-height: 1.5; }
+
+/* --------------------------- Solution / How --------------------------- */
+
+.how { padding: clamp(80px, 11vw, 132px) 0; background: var(--surface); border-top: 1px solid var(--divider); border-bottom: 1px solid var(--divider); }
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 760px)  { .steps { grid-template-columns: 1fr 1fr; gap: 18px; } }
+@media (min-width: 1100px) { .steps { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
+
+.step {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px 22px 22px;
+  display: flex; flex-direction: column; gap: 12px;
+  min-height: 320px;
+  transition: transform .25s cubic-bezier(.2,.7,.1,1), border-color .2s ease, box-shadow .2s ease;
+}
+.step:hover { transform: translateY(-2px); border-color: var(--accent-line); box-shadow: 0 12px 28px -16px rgba(59,71,214,0.18); }
+.step__num {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+.step__h { font-size: 18px; letter-spacing: -0.018em; }
+.step__p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--fg-3); }
+.step__art {
+  margin: auto -6px -6px;
+  padding: 14px;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.upload { display: flex; flex-direction: column; gap: 8px; }
+.upload__file { font-weight: 600; color: var(--fg); font-size: 12.5px; font-family: var(--font-mono); }
+.bar { display: block; height: 4px; background: var(--bg-2); border-radius: var(--r-pill); overflow: hidden; }
+.bar__fill { display: block; height: 100%; width: 100%; background: var(--accent); }
+
+.draft__q { margin-bottom: 6px; font-size: 11px; color: var(--fg-4); font-family: var(--font-mono); }
+.draft__a { font-family: var(--font-sans); font-size: 12.5px; color: var(--fg-2); line-height: 1.5; }
+.cite { color: var(--accent); font-family: var(--font-mono); font-size: 11px; }
+
+.route { display: flex; flex-wrap: wrap; gap: 6px; }
+.route__chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px 4px 4px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  font: 550 12px/1 var(--font-sans);
+  color: var(--fg-2);
+}
+.route__chip .av { width: 18px; height: 18px; font-size: 8.5px; }
+
+.exports { display: flex; flex-wrap: wrap; gap: 6px; }
+.export-chip {
+  padding: 5px 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  font: 550 12px/1 var(--font-mono);
+  color: var(--fg-2);
+}
+
+/* --------------------------- Features (bento) --------------------------- */
+
+.features { padding: clamp(80px, 11vw, 132px) 0; }
+.bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 760px) {
+  .bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "big big"
+      "kb wf"
+      "ex co";
+    gap: 18px;
+  }
+}
+@media (min-width: 1100px) {
+  .bento {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-areas:
+      "big big kb"
+      "big big wf"
+      "ex co co";
+    gap: 20px;
+  }
+}
+
+.bento__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px 24px 22px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+  box-shadow: var(--sh-1);
+}
+.bento__card:hover { border-color: var(--border-strong); box-shadow: var(--sh-2); }
+.bento__card:nth-of-type(1) { grid-area: big; min-height: 380px; }
+.bento__card:nth-of-type(2) { grid-area: kb; }
+.bento__card:nth-of-type(3) { grid-area: wf; }
+.bento__card:nth-of-type(4) { grid-area: ex; }
+.bento__card:nth-of-type(5) { grid-area: co; }
+
+.bento__head { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.bento__card p { margin: 0; color: var(--fg-3); font-size: 14.5px; line-height: 1.55; }
+.bento__art { margin-top: auto; padding: 14px; background: var(--bg); border: 1px solid var(--divider); border-radius: 8px; display: flex; flex-direction: column; gap: 8px; }
+.bento__art--minor { display: flex; flex-direction: row; flex-wrap: wrap; padding: 12px; }
+
+.extract__row { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--fg-2); padding: 7px 0; border-bottom: 1px solid var(--divider); }
+.extract__row:last-child { border-bottom: 0; }
+.tag {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 60px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font: 600 10.5px/1 var(--font-mono);
+  letter-spacing: 0.06em;
+}
+.tag--m { background: var(--err-tint); color: var(--err); }
+.tag--s { background: var(--accent-tint); color: var(--accent-2); }
+.tag--i { background: var(--bg-2); color: var(--fg-4); }
+
+.logo-line, .compl-row {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.logo-line li, .compl-row li {
+  padding: 5px 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  font: 550 12px/1 var(--font-sans);
+  color: var(--fg-2);
+}
+
+/* --------------------------- Social proof --------------------------- */
+
+.proof { padding: clamp(80px, 11vw, 132px) 0; background: var(--surface); border-top: 1px solid var(--divider); border-bottom: 1px solid var(--divider); }
+.proof__inner { display: grid; gap: 56px; }
+
+.proof__stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+@media (min-width: 780px) { .proof__stats { grid-template-columns: repeat(3, 1fr); gap: 40px; } }
+
+.stat { display: flex; flex-direction: column; gap: 6px; padding-top: 18px; border-top: 1px solid var(--border-strong); }
+.stat__big {
+  font-size: clamp(46px, 5.5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.stat__lbl { font-size: 16px; color: var(--fg); margin: 0; font-weight: 600; letter-spacing: -0.01em; }
+.stat__note { font-size: 13.5px; color: var(--fg-3); margin: 4px 0 0; max-width: 38ch; line-height: 1.55; }
+
+.quote {
+  margin: 0;
+  max-width: 62ch;
+}
+.quote blockquote { margin: 0; }
+.quote blockquote p {
+  font-size: clamp(22px, 2.6vw, 28px);
+  line-height: 1.35;
+  letter-spacing: -0.018em;
+  color: var(--fg);
+  margin: 0;
+  font-weight: 450;
+}
+.quote figcaption {
+  display: flex; flex-direction: column; gap: 2px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.quote__name { color: var(--fg); font-weight: 600; }
+.quote__role { color: var(--fg-3); }
+
+/* --------------------------- FAQ --------------------------- */
+
+.faq { padding: clamp(80px, 11vw, 132px) 0; }
+.faq__list { display: flex; flex-direction: column; }
+.faq details {
+  border-top: 1px solid var(--border);
+  padding: 22px 0;
+}
+.faq details:last-of-type { border-bottom: 1px solid var(--border); }
+.faq summary {
+  font-size: 17.5px;
+  font-weight: 550;
+  letter-spacing: -0.018em;
+  color: var(--fg);
+  cursor: pointer;
+  list-style: none;
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  position: relative;
+  padding-right: 32px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "";
+  position: absolute; right: 4px; top: 50%;
+  width: 12px; height: 12px;
+  transform: translateY(-50%);
+  background:
+    linear-gradient(currentColor, currentColor) center / 12px 1.5px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1.5px 12px no-repeat;
+  transition: transform .25s cubic-bezier(.2,.7,.1,1);
+  color: var(--fg-4);
+}
+.faq details[open] summary::after {
+  background: linear-gradient(currentColor, currentColor) center / 12px 1.5px no-repeat;
+}
+.faq details p {
+  margin: 14px 0 0;
+  color: var(--fg-3);
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 72ch;
+}
+
+/* --------------------------- Final CTA --------------------------- */
+
+.final {
+  padding: clamp(96px, 13vw, 152px) 0;
+  background:
+    radial-gradient(60% 80% at 50% 0%, var(--accent-tint) 0%, transparent 70%),
+    var(--bg);
+  border-top: 1px solid var(--divider);
+  text-align: center;
+}
+.final__inner { display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: 720px; margin: 0 auto; }
+.final__h { text-align: center; }
+.final__p { margin: 0; color: var(--fg-3); font-size: 17px; max-width: 55ch; line-height: 1.55; }
+.final__cta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+.final__note { margin: 8px 0 0; color: var(--fg-4); font-size: 13px; }
+
+/* --------------------------- Footer --------------------------- */
+
+.foot { background: var(--bg); border-top: 1px solid var(--divider); padding: 64px 0 28px; }
+.foot__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--divider);
+}
+@media (min-width: 780px) { .foot__inner { grid-template-columns: 1.2fr 3fr; gap: 56px; } }
+
+.foot__brand { display: flex; flex-direction: column; gap: 12px; max-width: 28ch; }
+.foot__tag { color: var(--fg-3); font-size: 14px; margin: 0; }
+
+.foot__cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+@media (min-width: 720px) { .foot__cols { grid-template-columns: repeat(4, 1fr); } }
+.foot__cols h4 { font-size: 13px; color: var(--fg); margin: 0 0 14px; letter-spacing: -0.005em; font-weight: 650; }
+.foot__cols ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 9px; }
+.foot__cols a { font-size: 13.5px; color: var(--fg-3); transition: color .15s ease; }
+.foot__cols a:hover { color: var(--accent); }
+
+.foot__base {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 22px;
+  font-size: 12px;
+  color: var(--fg-4);
+  flex-wrap: wrap; gap: 12px;
+}
+.foot__base .mono { font-size: 11.5px; }
+
+/* --------------------------- Motion --------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  html { scroll-behavior: auto; }
+}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Tenderly",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://tenderly.ai/",
+    "description": "AI-powered RFP, RFI, and RFQ response automation for enterprise bid teams. Reads RFP PDFs, extracts requirements, drafts answers from your knowledge base, routes questions to legal and security, and exports submission-ready proposals.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "category": "Free trial"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "287"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tenderly",
+    "url": "https://tenderly.ai/",
+    "logo": "https://tenderly.ai/logo.svg",
+    "sameAs": [
+      "https://twitter.com/tenderly_ai",
+      "https://www.linkedin.com/company/tenderly-ai"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does Tenderly do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tenderly automates RFP, RFI, and RFQ responses end to end. It reads incoming RFP PDFs, extracts every requirement, drafts compliant answers from your past proposals and knowledge base, routes specialist questions to the right team, and exports a submission-ready proposal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is Tenderly built for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Proposal managers, bid managers, and presales teams at enterprise SaaS companies, consulting firms, system integrators, and government contractors who respond to high volumes of RFPs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much faster is Tenderly than manual RFP work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Teams using Tenderly report finishing proposals 10x faster on average, with a 95% answer reuse rate and a 30% lift in win rate within the first two quarters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does Tenderly pull its answers from?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your existing knowledge sources. Tenderly connects to SharePoint, Google Drive, Confluence, Notion, Highspot, and Seismic, plus past submitted proposals, policy documents, and security questionnaires."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Tenderly secure for confidential RFPs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Tenderly is SOC 2 Type II certified, ISO 27001 compliant, and supports SSO, SAML, audit logs, and customer-managed encryption keys for enterprise deployments."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" role="banner">
+  <div class="container nav__inner">
+    <a class="brand" href="/" aria-label="Tenderly home">
+      <svg class="brand__mark" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+        <rect x="2"  y="2"  width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="12" y="2"  width="8" height="8" rx="2" fill="currentColor"/>
+        <rect x="2"  y="12" width="8" height="8" rx="2" fill="currentColor" opacity="0.35"/>
+        <rect x="12" y="12" width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <span class="brand__word">Tenderly</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#product">Product</a>
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#customers">Customers</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+
+    <div class="nav__cta">
+      <a class="link-quiet" href="#signin">Sign in</a>
+      <a class="btn btn--sm" href="#demo">Book a demo</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================== HERO ============================== -->
+  <section class="hero">
+    <div class="container hero__inner">
+
+      <div class="hero__copy">
+        <span class="eyebrow">
+          <span class="eyebrow__dot"></span>
+          AI Proposal Automation
+        </span>
+
+        <h1 class="h1">
+          A single workspace for
+          <span class="h1__line">every requirement, owner, and answer.</span>
+        </h1>
+
+        <p class="lede">
+          Compliance matrix, AI drafts, source attribution, and team workflow — visible to everyone, accountable to one.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--lg" href="#demo">Book a demo</a>
+          <a class="btn-ghost" href="#how">
+            <span>See how it works</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7 H12 M8 3 L12 7 L8 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <ul class="hero__proof">
+          <li><strong>10×</strong> faster responses</li>
+          <li class="dot"></li>
+          <li><strong>95%</strong> answer reuse</li>
+          <li class="dot"></li>
+          <li><strong>30%</strong> higher win rate</li>
+        </ul>
+      </div>
+
+      <!-- HERO VISUAL — Compliance matrix view (the actual product) -->
+      <figure class="hero__visual" aria-label="Tenderly compliance matrix view">
+        <div class="app">
+
+          <div class="app__chrome">
+            <div class="app__dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="app__tabs" role="tablist">
+              <button class="app__tab is-active" role="tab" aria-selected="true">Compliance matrix</button>
+              <button class="app__tab" role="tab" aria-selected="false">Answers</button>
+              <button class="app__tab" role="tab" aria-selected="false">Documents</button>
+            </div>
+            <div class="app__avs" aria-hidden="true">
+              <span class="av av--sk">SK</span>
+              <span class="av av--jm">JM</span>
+              <span class="av av--rt">RT</span>
+            </div>
+          </div>
+
+          <div class="app__body">
+
+            <p class="app__crumb">Active tenders <span class="sep">·</span> Federal Cloud Modernization</p>
+
+            <header class="app__head">
+              <div class="app__title-block">
+                <h3 class="app__title">Compliance Matrix <span class="sep">·</span> RFP-2026-0418</h3>
+                <p class="app__sub">240 requirements <span class="sep">·</span> 87% answered <span class="sep">·</span> due in 9 days</p>
+              </div>
+              <div class="app__filters" role="group" aria-label="Filter requirements">
+                <button class="filter is-active" type="button">All <span class="sep">·</span> 240</button>
+                <button class="filter" type="button">In review <span class="sep">·</span> 18</button>
+                <button class="filter" type="button">Blocked <span class="sep">·</span> 3</button>
+              </div>
+            </header>
+
+            <div class="matrix" role="table" aria-label="Compliance matrix">
+              <div class="matrix__head" role="row">
+                <span role="columnheader">ID</span>
+                <span role="columnheader">Requirement</span>
+                <span role="columnheader" class="col-owner">Owner</span>
+                <span role="columnheader">Status</span>
+                <span role="columnheader" class="col-conf">Confidence</span>
+              </div>
+
+              <div class="matrix__row" role="row">
+                <span class="m-id" role="cell">3.2.1</span>
+                <div class="m-req" role="cell">
+                  <p>SOC 2 Type II certification with current attestation.</p>
+                  <span class="src">§3.2 Security <span class="sep">·</span> p.42</span>
+                </div>
+                <div class="m-owner col-owner" role="cell"><span class="av av--sk">SK</span> Security</div>
+                <div class="m-status" role="cell"><span class="st st--ok"><i></i>Approved</span></div>
+                <div class="m-conf col-conf" role="cell">
+                  <span class="bar"><span class="bar__fill bar__fill--ok" style="width:96%"></span></span>
+                  <span class="m-num">96</span>
+                </div>
+              </div>
+
+              <div class="matrix__row" role="row">
+                <span class="m-id" role="cell">3.3.4</span>
+                <div class="m-req" role="cell">
+                  <p>Liability cap and indemnification terms.</p>
+                  <span class="src">§3.3 Legal <span class="sep">·</span> p.51</span>
+                </div>
+                <div class="m-owner col-owner" role="cell"><span class="av av--jm">JM</span> Legal</div>
+                <div class="m-status" role="cell"><span class="st st--rev"><i></i>In review</span></div>
+                <div class="m-conf col-conf" role="cell">
+                  <span class="bar"><span class="bar__fill bar__fill--rev" style="width:71%"></span></span>
+                  <span class="m-num">71</span>
+                </div>
+              </div>
+
+              <div class="matrix__row" role="row">
+                <span class="m-id" role="cell">4.1.2</span>
+                <div class="m-req" role="cell">
+                  <p>99.95% uptime SLA with credit schedule.</p>
+                  <span class="src">§4.1 Service Levels <span class="sep">·</span> p.67</span>
+                </div>
+                <div class="m-owner col-owner" role="cell"><span class="av av--rt">RT</span> Tech</div>
+                <div class="m-status" role="cell"><span class="st st--draft"><i></i>Drafted</span></div>
+                <div class="m-conf col-conf" role="cell">
+                  <span class="bar"><span class="bar__fill bar__fill--ok" style="width:89%"></span></span>
+                  <span class="m-num">89</span>
+                </div>
+              </div>
+
+              <div class="matrix__row m-fade" role="row">
+                <span class="m-id" role="cell">5.2.1</span>
+                <div class="m-req" role="cell">
+                  <p>Total cost of ownership, 5-year breakdown.</p>
+                  <span class="src">§5.2 Pricing <span class="sep">·</span> p.94</span>
+                </div>
+                <div class="m-owner col-owner" role="cell"><span class="av av--dh">DH</span> Finance</div>
+                <div class="m-status" role="cell"><span class="st st--rev"><i></i>In review</span></div>
+                <div class="m-conf col-conf" role="cell">
+                  <span class="bar"><span class="bar__fill bar__fill--rev" style="width:62%"></span></span>
+                  <span class="m-num">62</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ============================== LOGOS ============================== -->
+  <section class="logos" aria-label="Trusted by enterprise bid teams">
+    <div class="container">
+      <p class="logos__label">Trusted by bid teams at</p>
+      <ul class="logos__row">
+        <li>Northwind</li>
+        <li>Beacon Health</li>
+        <li>Atlas Federal</li>
+        <li>Heron &amp; Clarke</li>
+        <li>Meridian SI</li>
+        <li>Stonebridge</li>
+        <li>Vector Public Sector</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================== PROBLEM TIMELINE ============================== -->
+  <section id="problem" class="problem">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow eyebrow--warn">
+          <span class="eyebrow__dot eyebrow__dot--warn"></span>
+          The way it works today
+        </span>
+        <h2 class="h2">Eleven days. Five teams. One inbox on fire.</h2>
+        <p class="section-lede">
+          Most RFPs follow the same painful timeline. A 247-page PDF lands on a
+          Monday. By the second Friday, you're cobbling together a draft that
+          isn't quite finished. Sound familiar?
+        </p>
+      </header>
+
+      <div class="timeline" role="list">
+
+        <div class="tl-day tl-day--1" role="listitem">
+          <div class="tl-head">
+            <span class="tl-num mono">Day 1</span>
+            <span class="tl-rule" aria-hidden="true"></span>
+          </div>
+          <h3 class="tl-h">The PDF lands.</h3>
+          <p class="tl-p">247 pages. 218 requirements buried in legalese. You print it. You highlight it. You start a spreadsheet.</p>
+          <div class="tl-art tl-art--pdf" aria-hidden="true">
+            <div class="page">RFP-2026-0481.pdf</div>
+            <div class="page page--2"></div>
+            <div class="page page--3"></div>
+          </div>
+        </div>
+
+        <div class="tl-day tl-day--3" role="listitem">
+          <div class="tl-head">
+            <span class="tl-num mono">Day 3</span>
+            <span class="tl-rule" aria-hidden="true"></span>
+          </div>
+          <h3 class="tl-h">SharePoint roulette.</h3>
+          <p class="tl-p">"Did we answer this last year? Was it the Acme bid or the Globex one? Which folder?"</p>
+          <div class="tl-art tl-art--folders" aria-hidden="true">
+            <div class="folder">2024 / Bids / FINAL_v3</div>
+            <div class="folder">2024 / Bids / FINAL_v3_legal_redline</div>
+            <div class="folder">2025 / Old / dont_use_this</div>
+            <div class="folder">2025 / Bids / Approved (?)</div>
+          </div>
+        </div>
+
+        <div class="tl-day tl-day--5" role="listitem">
+          <div class="tl-head">
+            <span class="tl-num mono">Day 5</span>
+            <span class="tl-rule" aria-hidden="true"></span>
+          </div>
+          <h3 class="tl-h">Chasing legal.</h3>
+          <p class="tl-p">Section 11 needs a redline. Legal's on Slack but in another tab. Three follow-ups later, no answer.</p>
+          <div class="tl-art tl-art--slack" aria-hidden="true">
+            <div class="msg"><span class="ava ava--leg">L</span><span class="msg__name">@maya · Legal</span><span class="msg__time">Tue 9:14</span><br/><span class="msg__txt">will look later today 👀</span></div>
+            <div class="msg msg--self"><span class="msg__name">you</span><span class="msg__time">Wed 4:47</span><br/><span class="msg__txt">friendly bump on §11?</span></div>
+            <div class="msg msg--self"><span class="msg__name">you</span><span class="msg__time">Thu 11:02</span><br/><span class="msg__txt">hey, still need this</span></div>
+          </div>
+        </div>
+
+        <div class="tl-day tl-day--7" role="listitem">
+          <div class="tl-head">
+            <span class="tl-num mono">Day 7</span>
+            <span class="tl-rule" aria-hidden="true"></span>
+          </div>
+          <h3 class="tl-h">Security disappears.</h3>
+          <p class="tl-p">The questionnaire goes to security, who say it'll take "the rest of the week." You don't have the rest of the week.</p>
+          <div class="tl-art tl-art--ticket" aria-hidden="true">
+            <div class="ticket">
+              <div class="ticket__line"><span class="mono dim">TICKET</span><span class="mono">SEC-4429</span></div>
+              <div class="ticket__line"><span class="mono dim">STATUS</span><span class="chip chip--warn">In queue · est. 4d</span></div>
+              <div class="ticket__line"><span class="mono dim">ASSIGNEE</span><span>Unassigned</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-day tl-day--11" role="listitem">
+          <div class="tl-head">
+            <span class="tl-num mono">Day 11</span>
+            <span class="tl-rule" aria-hidden="true"></span>
+          </div>
+          <h3 class="tl-h">You lose to the faster bid.</h3>
+          <p class="tl-p">The buyer's procurement lead writes back: thanks for the submission, we've already shortlisted three vendors who replied by Friday.</p>
+          <div class="tl-art tl-art--email" aria-hidden="true">
+            <div class="email">
+              <div class="email__from mono dim">procurement@acme.com</div>
+              <div class="email__sub">Re: RFP-2026-0481</div>
+              <div class="email__body">"Thank you for your submission. We have moved forward with three shortlisted vendors..."</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== SOLUTION ============================== -->
+  <section id="how" class="how">
+    <div class="container">
+      <header class="section-head section-head--center">
+        <span class="eyebrow eyebrow--ok">
+          <span class="eyebrow__dot eyebrow__dot--ok"></span>
+          The way it works with Tenderly
+        </span>
+        <h2 class="h2">Four steps. One afternoon.</h2>
+        <p class="section-lede">
+          A workflow built around how bid teams actually operate, with the AI
+          doing the parts no one wanted to do anyway.
+        </p>
+      </header>
+
+      <ol class="steps">
+
+        <li class="step">
+          <span class="step__num mono">01</span>
+          <h3 class="step__h">Upload the RFP.</h3>
+          <p class="step__p">PDF, Word, Excel, or a procurement portal export. Tenderly reads it, splits it into sections, and extracts every requirement, including the ones buried inside paragraphs.</p>
+          <div class="step__art">
+            <div class="upload">
+              <span class="mono dim">upload</span>
+              <span class="upload__file">RFP-2026-0481.pdf</span>
+              <span class="bar"><span class="bar__fill"></span></span>
+              <span class="mono ok">218 requirements found</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="step">
+          <span class="step__num mono">02</span>
+          <h3 class="step__h">AI drafts the answers.</h3>
+          <p class="step__p">Tenderly searches your knowledge base, past proposals, policies, and security docs, then writes a compliant first draft for every requirement, with sources cited inline.</p>
+          <div class="step__art">
+            <div class="draft">
+              <div class="draft__q mono dim">Q · 4.2.1 SOC 2 Type II</div>
+              <div class="draft__a">
+                Tenderly is SOC 2 Type II audited annually by <span class="cite">[Drata, 2025 report]</span>. Our most recent report covers the 12 months ending March 2026 and is available under NDA <span class="cite">[Vault / Security / SOC2-2026.pdf]</span>.
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="step">
+          <span class="step__num mono">03</span>
+          <h3 class="step__h">The team reviews.</h3>
+          <p class="step__p">Specialist questions route to legal, security, finance, or product automatically. Reviewers see only what they own. Approvals are tracked. Nothing falls through.</p>
+          <div class="step__art">
+            <div class="route">
+              <span class="route__chip"><span class="ava ava--leg">L</span>Legal · 12</span>
+              <span class="route__chip"><span class="ava ava--sec">S</span>Security · 24</span>
+              <span class="route__chip"><span class="ava ava--fin">F</span>Finance · 6</span>
+              <span class="route__chip"><span class="ava ava--prd">P</span>Product · 41</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="step">
+          <span class="step__num mono">04</span>
+          <h3 class="step__h">Export and submit.</h3>
+          <p class="step__p">Your branded template, your formatting, your tone. Word, PDF, or straight back into the buyer's portal. Tracked changes preserved for audit.</p>
+          <div class="step__art">
+            <div class="exports">
+              <span class="export-chip">Word</span>
+              <span class="export-chip">PDF</span>
+              <span class="export-chip">Excel</span>
+              <span class="export-chip">Portal sync</span>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================== FEATURES ============================== -->
+  <section id="features" class="features">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">Capabilities</span>
+        <h2 class="h2">Built for the way enterprise bids actually work.</h2>
+      </header>
+
+      <div class="bento">
+
+        <article class="bento__card bento__card--big">
+          <header class="bento__head">
+            <h3>AI requirement extraction</h3>
+            <span class="chip chip--ok">accurate to 98.4%</span>
+          </header>
+          <p>Tenderly reads RFPs the way a senior bid manager would: section by section, classifying mandatory, desirable, and informational asks. Pricing tables, compliance matrices, eligibility criteria, the works.</p>
+          <div class="bento__art">
+            <div class="extract">
+              <div class="extract__row"><span class="tag tag--m">MUST</span><span>Vendor shall hold ISO 27001 certification</span></div>
+              <div class="extract__row"><span class="tag tag--s">SHOULD</span><span>Vendor should provide a regional account manager</span></div>
+              <div class="extract__row"><span class="tag tag--i">INFO</span><span>Submission deadline: 2026-06-14, 17:00 GMT</span></div>
+              <div class="extract__row"><span class="tag tag--m">MUST</span><span>Pricing in EUR, inclusive of all sub-processors</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="bento__card">
+          <header class="bento__head">
+            <h3>Knowledge base, finally usable.</h3>
+          </header>
+          <p>Connects to SharePoint, Drive, Confluence, Notion, Highspot, and Seismic. Indexes every past proposal. Surfaces the exact answer, with citation.</p>
+          <ul class="logo-line">
+            <li>SharePoint</li>
+            <li>Drive</li>
+            <li>Confluence</li>
+            <li>Notion</li>
+            <li>Highspot</li>
+            <li>Seismic</li>
+          </ul>
+        </article>
+
+        <article class="bento__card">
+          <header class="bento__head">
+            <h3>Team workflows that hold.</h3>
+          </header>
+          <p>Route by topic. Notify by channel. Track approvals. Escalate before the deadline, not after. Built for the five departments every bid touches.</p>
+          <div class="bento__art bento__art--minor">
+            <span class="route__chip"><span class="ava ava--leg">L</span>Legal</span>
+            <span class="route__chip"><span class="ava ava--sec">S</span>Security</span>
+            <span class="route__chip"><span class="ava ava--fin">F</span>Finance</span>
+          </div>
+        </article>
+
+        <article class="bento__card">
+          <header class="bento__head">
+            <h3>One-click export.</h3>
+          </header>
+          <p>Submission-ready in your template, your fonts, your headers. Word, PDF, Excel pricing sheets, or straight back to the procurement portal.</p>
+          <div class="bento__art bento__art--minor">
+            <span class="export-chip">.docx</span>
+            <span class="export-chip">.pdf</span>
+            <span class="export-chip">.xlsx</span>
+          </div>
+        </article>
+
+        <article class="bento__card">
+          <header class="bento__head">
+            <h3>Compliance, by default.</h3>
+          </header>
+          <p>SOC 2 Type II. ISO 27001. SSO and SAML. Audit logs on every answer. Optional customer-managed keys for regulated industries.</p>
+          <ul class="compl-row">
+            <li>SOC 2</li>
+            <li>ISO 27001</li>
+            <li>GDPR</li>
+            <li>SSO / SAML</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== SOCIAL PROOF ============================== -->
+  <section id="customers" class="proof">
+    <div class="container proof__inner">
+
+      <div class="proof__stats">
+        <div class="stat">
+          <p class="stat__big">10×</p>
+          <p class="stat__lbl">faster RFP responses</p>
+          <p class="stat__note">Median time-to-submit dropped from 11 days to 1.1 across 84 customer bid teams.</p>
+        </div>
+        <div class="stat">
+          <p class="stat__big">95%</p>
+          <p class="stat__lbl">answer reuse rate</p>
+          <p class="stat__note">19 out of every 20 answers come straight from your existing approved content, with full citation.</p>
+        </div>
+        <div class="stat">
+          <p class="stat__big">+30%</p>
+          <p class="stat__lbl">win rate, two quarters in</p>
+          <p class="stat__note">More bids submitted, fewer abandoned, more time spent on the deals that matter.</p>
+        </div>
+      </div>
+
+      <figure class="quote">
+        <blockquote>
+          <p>"We used to decline two out of every three RFPs because we didn't have the capacity. With Tenderly, we respond to every qualified bid, and we win more of them. It changed what our team is for."</p>
+        </blockquote>
+        <figcaption>
+          <span class="quote__name">Priya Raghavan</span>
+          <span class="quote__role">VP Bids &amp; Proposals, Meridian SI</span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ============================== FAQ ============================== -->
+  <section class="faq">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="h2">Questions teams ask before switching.</h2>
+      </header>
+
+      <div class="faq__list">
+        <details>
+          <summary>How long does setup take?</summary>
+          <p>Most teams are drafting answers on a real RFP within the first afternoon. Connecting your knowledge base, importing past proposals, and configuring routing typically takes one to two business days.</p>
+        </details>
+        <details>
+          <summary>Where does Tenderly pull answers from?</summary>
+          <p>From your own content. We connect to SharePoint, Google Drive, Confluence, Notion, Highspot, and Seismic, plus any past proposals or policy documents you upload directly. Every generated answer cites its source.</p>
+        </details>
+        <details>
+          <summary>What about confidentiality and security?</summary>
+          <p>Tenderly is SOC 2 Type II certified and ISO 27001 compliant. We support SSO, SAML, audit logging, and customer-managed encryption keys. Your data is not used to train shared models.</p>
+        </details>
+        <details>
+          <summary>Does the AI hallucinate answers?</summary>
+          <p>Tenderly is built to refuse rather than guess. If an answer isn't supported by your knowledge base, it routes to a human reviewer with the gap clearly flagged, rather than inventing a response.</p>
+        </details>
+        <details>
+          <summary>Can we keep our existing templates and tone?</summary>
+          <p>Yes. Tenderly learns your house voice from approved past proposals and applies your brand templates on export. Reviewers see drafts in your tone, not generic AI prose.</p>
+        </details>
+        <details>
+          <summary>How is pricing structured?</summary>
+          <p>Per seat, with volume tiers for organizations responding to large numbers of RFPs each quarter. Enterprise plans include private deployment, custom integrations, and a dedicated solutions engineer.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FINAL CTA ============================== -->
+  <section class="final">
+    <div class="container final__inner">
+      <h2 class="h1 final__h">
+        See your next RFP done before lunch.
+      </h2>
+      <p class="final__p">
+        Book a 30-minute demo. Bring an old RFP you've already won, or one you almost lost.
+        We'll show you Tenderly drafting it in real time.
+      </p>
+      <div class="final__cta">
+        <a class="btn btn--lg" href="#demo">Book a demo</a>
+        <a class="btn-ghost" href="#trial">
+          <span>Or start a free trial</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7 H12 M8 3 L12 7 L8 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <p class="final__note">No card required. Connect your knowledge base in 10 minutes.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot" role="contentinfo">
+  <div class="container foot__inner">
+
+    <div class="foot__brand">
+      <a class="brand" href="/" aria-label="Tenderly home">
+        <svg class="brand__mark" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+          <rect x="2"  y="2"  width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="12" y="2"  width="8" height="8" rx="2" fill="currentColor"/>
+          <rect x="2"  y="12" width="8" height="8" rx="2" fill="currentColor" opacity="0.35"/>
+          <rect x="12" y="12" width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <span class="brand__word">Tenderly</span>
+      </a>
+      <p class="foot__tag">AI proposal automation for the teams that win the work.</p>
+    </div>
+
+    <nav class="foot__cols" aria-label="Footer">
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#integrations">Integrations</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#saas">Enterprise SaaS</a></li>
+          <li><a href="#consulting">Consulting firms</a></li>
+          <li><a href="#si">System integrators</a></li>
+          <li><a href="#gov">Government &amp; public sector</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#guides">RFP playbook</a></li>
+          <li><a href="#docs">Docs</a></li>
+          <li><a href="#changelog">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="#press">Press</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </div>
+
+  <div class="container foot__base">
+    <span class="mono">© 2026 Tenderly, Inc.</span>
+    <span class="mono">SOC 2 Type II · ISO 27001 · GDPR</span>
+  </div>
+</footer>
+
+</body>
+</html>
