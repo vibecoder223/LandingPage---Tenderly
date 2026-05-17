@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>OG image · Tenderly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;650;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    /* Screenshot this page at 1200×630, save as og.png */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      width: 1200px; height: 630px;
+      margin: 0 auto;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: #FFFFFF;
+      background:
+        radial-gradient(1100px 600px at 78% -10%, rgba(124,138,255,0.35), transparent 60%),
+        radial-gradient(900px 500px at -8% 18%, rgba(59,71,214,0.42), transparent 60%),
+        linear-gradient(180deg, #1B2270 0%, #2D38A8 48%, #3B47D6 100%);
+      overflow: hidden;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.015em;
+    }
+    /* Faint grid texture so it doesn't read flat */
+    body::before {
+      content: ""; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.7), transparent 80%);
+      -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.7), transparent 80%);
+      pointer-events: none;
+    }
+    .og {
+      position: relative; z-index: 1;
+      width: 100%; height: 100%;
+      padding: 72px 80px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .top { display: flex; align-items: center; gap: 14px; }
+    .mark {
+      width: 40px; height: 40px;
+      display: grid; place-items: center;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 9px;
+    }
+    .wordmark { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; }
+    .badge {
+      margin-left: 16px;
+      padding: 6px 12px;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+    }
+
+    .stack { display: flex; flex-direction: column; gap: 22px; max-width: 980px; }
+    .headline {
+      font-size: 86px;
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      margin: 0;
+    }
+    .headline em {
+      font-style: normal;
+      color: #FFD4A6;
+    }
+    .sub {
+      font-size: 26px;
+      line-height: 1.35;
+      color: rgba(255,255,255,0.78);
+      font-weight: 450;
+      margin: 0;
+      max-width: 760px;
+    }
+
+    .foot {
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.65);
+    }
+    .foot .left { display: flex; align-items: center; gap: 18px; }
+    .foot .dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.4); }
+    .foot .arrow { font-family: 'Inter', sans-serif; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<div class="og">
+
+  <div class="top">
+    <div class="mark" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 22 22">
+        <rect x="2"  y="2"  width="8" height="8" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+        <rect x="12" y="2"  width="8" height="8" rx="2" fill="#FFFFFF"/>
+        <rect x="2"  y="12" width="8" height="8" rx="2" fill="#FFFFFF" opacity="0.4"/>
+        <rect x="12" y="12" width="8" height="8" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <span class="wordmark">Tenderly</span>
+    <span class="badge">AI Proposal Automation</span>
+  </div>
+
+  <div class="stack">
+    <h1 class="headline">Win more tenders <em>without the chaos.</em></h1>
+    <p class="sub">AI-powered RFP, RFI, and RFQ response automation for enterprise bid teams.</p>
+  </div>
+
+  <div class="foot">
+    <div class="left">
+      <span>tenderly.ai</span>
+      <span class="dot"></span>
+      <span>10× faster · 95% answer reuse · 30% higher win rate</span>
+    </div>
+    <span class="arrow">Book a demo →</span>
+  </div>
+
+</div>
+
+</body>
+</html>

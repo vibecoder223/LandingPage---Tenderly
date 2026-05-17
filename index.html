@@ -28,6 +28,8 @@
   <meta name="twitter:description" content="AI-powered RFP, RFI, and RFQ response automation for enterprise bid teams." />
   <meta name="twitter:image" content="https://tenderly.ai/og.png" />
 
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -1040,6 +1042,10 @@ h3 { font-size: 18px; letter-spacing: -0.012em; font-weight: 600; margin: 0; col
   flex-wrap: wrap; gap: 12px;
 }
 .foot__base .mono { font-size: 11.5px; }
+.foot__legal { display: inline-flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 12.5px; }
+.foot__legal a { color: var(--fg-3); font-weight: 500; transition: color .15s ease; }
+.foot__legal a:hover { color: var(--fg); }
+.foot__legal .sep { color: var(--fg-5); margin: 0; }
 
 /* --------------------------- Mobile responsive --------------------------- */
 
@@ -1270,7 +1276,7 @@ html, body { overflow-x: hidden; }
 
     <div class="nav__cta">
       <a class="link-quiet" href="#signin">Sign in</a>
-      <a class="btn btn--sm" href="#demo">Book a demo</a>
+      <a class="btn btn--sm" href="demo.html">Book a demo</a>
     </div>
   </div>
 </header>
@@ -1297,7 +1303,7 @@ html, body { overflow-x: hidden; }
         </p>
 
         <div class="hero__cta">
-          <a class="btn btn--lg" href="#demo">Book a demo</a>
+          <a class="btn btn--lg" href="demo.html">Book a demo</a>
           <a class="btn-ghost" href="#how">
             <span>See how it works</span>
             <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7 H12 M8 3 L12 7 L8 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1778,8 +1784,8 @@ html, body { overflow-x: hidden; }
         We'll show you Tenderly drafting it in real time.
       </p>
       <div class="final__cta">
-        <a class="btn btn--lg" href="#demo">Book a demo</a>
-        <a class="btn-ghost" href="#trial">
+        <a class="btn btn--lg" href="demo.html">Book a demo</a>
+        <a class="btn-ghost" href="trial.html">
           <span>Or start a free trial</span>
           <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7 H12 M8 3 L12 7 L8 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -1841,7 +1847,7 @@ html, body { overflow-x: hidden; }
           <li><a href="#about">About</a></li>
           <li><a href="#careers">Careers</a></li>
           <li><a href="#press">Press</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -1850,6 +1856,13 @@ html, body { overflow-x: hidden; }
 
   <div class="container foot__base">
     <span class="mono">© 2026 Tenderly, Inc.</span>
+    <div class="foot__legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <span class="sep">·</span>
+      <a href="terms.html">Terms of Service</a>
+      <span class="sep">·</span>
+      <a href="contact.html">Contact</a>
+    </div>
     <span class="mono">SOC 2 Type II · ISO 27001 · GDPR</span>
   </div>
 </footer>
